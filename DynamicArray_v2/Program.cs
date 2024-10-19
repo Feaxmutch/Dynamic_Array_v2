@@ -26,15 +26,13 @@
                 {
                     SumNumbers(numbers);
                 }
-
-                if (userInput == CommandExit)
+                else if (userInput == CommandExit)
                 {
                     isWorking = false;
                 }
-
-                if (int.TryParse(userInput, out int newNumber))
+                else if (int.TryParse(userInput, out int number))
                 {
-                    numbers.Add(newNumber);
+                    numbers.Add(number);
                 }
 
                 Console.ReadKey();
