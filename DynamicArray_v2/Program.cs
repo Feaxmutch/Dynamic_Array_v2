@@ -22,17 +22,19 @@
                 Console.WriteLine($"\nВведите число или {CommandSum}, для суммирования введённых ранее чисел.");
                 string userInput = Console.ReadLine();
 
-                if (int.TryParse(userInput, out int newNumber))
-                {
-                    numbers.Add(newNumber);
-                }
-                else if (userInput == CommandSum)
+                if (userInput == CommandSum)
                 {
                     SumNumbers(numbers);
                 }
-                else if (userInput == CommandExit)
+
+                if (userInput == CommandExit)
                 {
                     isWorking = false;
+                }
+
+                if (int.TryParse(userInput, out int newNumber))
+                {
+                    numbers.Add(newNumber);
                 }
 
                 Console.ReadKey();
